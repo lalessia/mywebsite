@@ -1,0 +1,20 @@
+<!-- templates/portfolio/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <!-- Caption header -->
+    <div class="caption-header text-center wow zoomInDown">
+        <!--h5 class="fw-normal">Benvenuto</h5-->
+        <h1 class="fw-light mb-4"><b class="fg-theme">Alessia</b> Profeta</h1>
+        <div class="badge">Data Specialist & Web Developer</div>
+    </div> <!-- End Caption header -->
+    <div class="floating-button"><span class="ti-mouse"></span></div>
+
+    
+    <p>Welcome to the home page of the portfolio!</p>
+    {% include 'portfolio/about.html' %}
+    {% include 'portfolio/portfolio.html' %}
+{% endblock %}
