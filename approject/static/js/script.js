@@ -13,10 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             var targetId = this.getAttribute('href');
-            var targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                history.pushState(null, null, targetId); // Aggiorna l'URL
+            
+            // Controlla se il targetId inizia con '#' (indica un hash per lo stesso documento)
+            if (targetId.startsWith('#')) {
+                var targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, null, targetId); // Aggiorna l'URL
+                }
+            } else {
+                // Se non è un hash, reindirizza normalmente alla nuova pagina
+                window.location.href = targetId;
             }
         });
     });

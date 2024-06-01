@@ -10,6 +10,7 @@ def portfolio(request):
     return render(request, 'portfolio/portfolio.html')
 
 def contact(request):
-    return HttpResponse("<h1>Ciao a tutti! Sono la pagina contact</h1>")
+    return render(request, 'portfolio/contact.html')
+#HttpResponse("<h1>Ciao a tutti! Sono la pagina contact</h1>")
 
 
