@@ -1,24 +1,45 @@
 <!-- templates/portfolio/home.html -->
+
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div id="particles-js"></div>
 
-    <!-- Caption header -->
-    <div id="home" style="background-image: url(../static/images/bg_image_1.jpg)">
-        <div class="caption-header text-center wow zoomInDown">
+<!-- Caption header -->
+<div style="position: relative;">
+    <div id="particles-js"></div>
+    <div style="position: absolute;">
+        <div class="caption-header text-center wow zoomInDown" >
             <!--h5 class="fw-normal">Benvenuto</h5-->
             <h1 class="fw-light mb-4"><b class="fg-theme">Alessia</b> Profeta</h1>
             <div class="badge">Data Specialist & Web Developer</div>
         </div> <!-- End Caption header -->
-        <div class="floating-button"><span class="ti-mouse"></span></div>
     </div>
+</div>
 
-    
-    <p>Welcome to the home page of the portfolio!</p>
-    {% include 'portfolio/about.html' %}
-    {% include 'portfolio/portfolio.html' %}
-    {% include 'portfolio/contact.html' %}
+<div id="home" style="background-image: url(../static/images/bg_image_1.jpg)">
+    <div class="caption-header text-center wow zoomInDown">
+        <!--h5 class="fw-normal">Benvenuto</h5-->
+        <h1 class="fw-light mb-4"><b class="fg-theme">Alessia</b> Profeta</h1>
+        <div class="badge">Data Specialist & Web Developer</div>
+    </div> <!-- End Caption header -->
+    <div class="floating-button"><span class="ti-mouse"></span></div>
+</div>
+
+
+<p>Welcome to the home page of the portfolio!</p>
+{% include 'portfolio/about.html' %}
+{% include 'portfolio/portfolio.html' %}
+{% include 'portfolio/contact.html' %}
+
+
+<script>
+    const config = {{ json_data|safe }};
+    console.log(config, particlesJS)
+    particlesJS('particles-js', config, function () {
+        console.log('callback - particles.js config loaded');
+    })
+</script>
+
 {% endblock %}
