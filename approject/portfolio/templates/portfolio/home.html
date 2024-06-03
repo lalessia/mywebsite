@@ -7,10 +7,10 @@
 {% block content %}
 
 <!-- Caption header -->
-<div style="position: relative;">
+<div class="hero-container">
     <div id="particles-js"></div>
-    <div style="position: absolute;">
-        <div class="caption-header text-center wow zoomInDown" >
+    <div class="welcome-title">
+        <div class="caption-header text-center wow zoomInDown">
             <!--h5 class="fw-normal">Benvenuto</h5-->
             <h1 class="fw-light mb-4"><b class="fg-theme">Alessia</b> Profeta</h1>
             <div class="badge">Data Specialist & Web Developer</div>
@@ -18,24 +18,13 @@
     </div>
 </div>
 
-<div id="home" style="background-image: url(../static/images/bg_image_1.jpg)">
-    <div class="caption-header text-center wow zoomInDown">
-        <!--h5 class="fw-normal">Benvenuto</h5-->
-        <h1 class="fw-light mb-4"><b class="fg-theme">Alessia</b> Profeta</h1>
-        <div class="badge">Data Specialist & Web Developer</div>
-    </div> <!-- End Caption header -->
-    <div class="floating-button"><span class="ti-mouse"></span></div>
-</div>
-
-
-<p>Welcome to the home page of the portfolio!</p>
 {% include 'portfolio/about.html' %}
 {% include 'portfolio/portfolio.html' %}
 {% include 'portfolio/contact.html' %}
 
 
 <script>
-    const config = {{ json_data|safe }};
+    const config = {{ json_data| safe }};
     console.log(config, particlesJS)
     particlesJS('particles-js', config, function () {
         console.log('callback - particles.js config loaded');
