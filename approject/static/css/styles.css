@@ -7,8 +7,9 @@
     z-index: 9999;
 }
 
-.navbar-bg {
-    background-color: gray;
+.navbar-main {
+    background-color: #353B57;
+    height: 80px;
 }
 
 #particles-js {
@@ -30,4 +31,29 @@
 
 .hero-container {
     position: relative;
+}
+
+.page-about .img-place::before {
+    border-color: #353B57;
+}
+
+.navbar-logo {
+    height: 47px;
+}
+
+.contact-button {
+    background-color: #353B57;
+    padding: 6px 10px;
+
+    &__icon {
+        &::before {
+            font-size: 20px;
+        }
+    }
+}
+
+.shrink {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }

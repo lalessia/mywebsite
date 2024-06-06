@@ -1,11 +1,6 @@
 <!-- templates/portfolio/contact.html -->
 {% load static %}
 
-{# {% extends 'base.html' %} #}
-
-
-{% block title %}Contact{% endblock %}
-
 {% block content %}
 <!-- Contact -->
 <div class="vg-page page-contact" id="contact">
@@ -14,9 +9,9 @@
             <div class="badge badge-subhead">Contact</div>
         </div>
         <h1 class="text-center fw-normal wow fadeInUp">Get in touch</h1>
-        <div class="row py-5">
-            <div class="col-lg-5">
-                <form class="vg-contact-form">
+        <div class="row py-5 text-center">
+            <div class="col-lg-12">
+                <!--form class="vg-contact-form">
                     <div class="form-row">
                         <div class="col-12 mt-3 wow fadeInUp">
                             <input class="form-control" type="text" name="Name" placeholder="Your Name">
@@ -33,7 +28,9 @@
                         </div>
                         <button type="submit" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
                     </div>
-                </form>
+                </form-->
+                <a class="btn btn-theme rounded-circle contact-button mx-3" href="https://github.com/lalessia" target="_blank"><span class="ti-github contact-button__icon"></span></a>
+                <a class="btn btn-theme rounded-circle contact-button mx-3" href="https://www.linkedin.com/in/alessia-profeta-61722634/" target="_blank"><span class="ti-linkedin contact-button__icon"></span></a>
             </div>
         </div>
     </div>

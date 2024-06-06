@@ -100,3 +100,4 @@ db.sqlite3
 
 *.zip
 css_free_template/
+approject/static/images/favicon_io
