@@ -57,3 +57,22 @@
     top: 0;
     width: 100%;
 }
+
+.link-footer{
+    color: #9FA2AB;
+}
+
+.link-footer:hover{
+    color: #9FA2AB;
+}
+
+.vg-footer{
+    padding: 0px 0;
+}
+
+.footer-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10px;
+}
