@@ -27,6 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    var gridItems = document.querySelectorAll('.grid-item .img-caption');
+
+      gridItems.forEach(function(imgCaption) {
+        var collapseElem = imgCaption.querySelector('.collapse');
+
+        imgCaption.addEventListener('mouseenter', function() {
+          var collapse = new bootstrap.Collapse(collapseElem, {
+            toggle: true
+          });
+        });
+
+        imgCaption.addEventListener('mouseleave', function() {
+          var collapse = bootstrap.Collapse.getInstance(collapseElem);
+          collapse.hide();
+        });
+      });
 });
 
 window.onscroll = function() {shrinkNavbar()};
