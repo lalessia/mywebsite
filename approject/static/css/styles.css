@@ -75,6 +75,10 @@
     bottom: 10px;
 }
 
+.grid-item {
+    width: 350px;
+}
+
 .grid-item__caption {
     background-color: #353B57 !important;
 }
