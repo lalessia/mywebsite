@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- Portfolio page -->
-<div class="vg-page page-portfolio" id="portfolio">
+<div class="vg-page page-portfolio nav-section" id="portfolio">
 
     <div class="container d-flex flex-column">
         <div class="text-center wow fadeInUp">
@@ -25,11 +25,16 @@
             <div class="grid-item wow zoomIn">
                 <div class="img-place" data-src="{% static 'images/work-1.jpg' %}" data-fancybox
                     data-caption="<h5 class='fg-theme'>{{ project.title }}</h5> <p>{{ project.used_technologies }}</p>">
-                    <img src="{% static 'images/work-1.jpg' %}" alt="">
+                    <a href="https://github.com/lalessia/mywebsite" target="_blank"><img src="{% static 'images/work-1.jpg' %}" alt=""></a>
                     <div class="img-caption grid-item__caption">
-                        <h5 class="fg-theme">{{ project.title }}</h5>
-                        <p>{{ project.used_technologies }}</p>
-                        <p class="collapse show">{{ project.description }}
+                        <div class="d-flex justify-content-between">
+                            <h5 class="fg-theme grid-item__caption-title">{{ project.title }}</h5>
+                            <button class="btn btn-primary grid-item__caption-button" type="button" data-bs-toggle="collapse" data-bs-target="#caption-description-{{ forloop.counter }}" aria-expanded="false" aria-controls="caption-description-{{ forloop.counter }}">
+                                <span class="ti-angle-down grid-item__caption-button-icon"></span>
+                            </button>
+                        </div>
+                        <p class="grid-item__caption-tags">{{ project.used_technologies }}</p>
+                        <p id="caption-description-{{ forloop.counter }}" class="collapse grid-item__caption-description">{{ project.description }}
                         </p>
                     </div>
                 </div>

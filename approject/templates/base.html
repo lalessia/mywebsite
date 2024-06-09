@@ -43,58 +43,20 @@
         <span class="ti-arrow-up"></span>
     </div>
 
-    <!-- Setting button -->
-    <div class="config">
-        <div class="template-config">
-            <!-- Settings -->
-            <div class="d-block">
-                <button class="btn btn-fab btn-sm" id="sideel" title="Settings"><span
-                        class="ti-settings"></span></button>
-            </div>
-            <!-- Puschase -->
-            <div class="d-block">
-                <a href="https://macodeid.com/projects/virtual-folio/" class="btn btn-fab btn-sm"
-                    title="Get this template" data-toggle="tooltip" data-placement="left"><span
-                        class="ti-download"></span></a>
-            </div>
-            <!-- Help -->
-            <div class="d-block">
-                <a href="#" class="btn btn-fab btn-sm" title="Help" data-toggle="tooltip" data-placement="left"><span
-                        class="ti-help"></span></a>
-            </div>
-        </div>
-        <div class="set-menu">
-            <p>Select Color</p>
-            <div class="color-bar" data-toggle="selected">
-                <span class="color-item bg-theme-red selected" data-class="theme-red"></span>
-                <span class="color-item bg-theme-blue" data-class="theme-blue"></span>
-                <span class="color-item bg-theme-green" data-class="theme-green"></span>
-                <span class="color-item bg-theme-orange" data-class="theme-orange"></span>
-                <span class="color-item bg-theme-purple" data-class="theme-purple"></span>
-            </div>
-            <select class="custom-select d-block my-2" id="change-page">
-                <option value="">Choose Page</option>
-                <option value="index">Topbar</option>
-                <option value="blog-topbar">Blog (Topbar)</option>
-                <option value="index-2">Minibar</option>
-                <option value="blog-minibar">Blog (Minibar)</option>
-            </select>
-        </div>
-    </div>
-
-
     <header class="main-header">
         <!-- Navbar -->
         <div id="navbar" class="navbar navbar-expand-lg navbar-dark navbar-main" data-offset="500">
             <div class="container">
-                <a href="" class="navbar-brand"><img class="navbar-logo" src="{% static 'images/logo/logo_negative.jpg' %}" alt="My Image"></a>
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
+                <a href="javascript:void(0)" class="navbar-brand"><img class="navbar-logo" src="{% static 'images/logo/logo_negative.jpg' %}" alt="My Image"></a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-expanded="true">
                     <span class="ti-menu"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="main-navbar">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a href="" class="nav-link" data-animate="scrolling">Home</a>
+                        <li class="nav-item">
+                            <a href="" class="nav-link active" data-animate="scrolling" onclick="window.scrollTo({top: 0, left: 0, behavior: 'smooth'});">
+                                Home
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="#about" class="nav-link" data-animate="scrolling">About</a>
@@ -131,9 +93,9 @@
         <div class="vg-footer">
             <!--h1 class="text-center">Virtual Folio</h1-->
             <div class="container">
-                <div class="row justify-content-center mt-3">
-                    <div class="col-12 footer-text">
-                        <p class="text-center mb-0 mt-4">Copyright &copy;2020. All right reserved | This template is
+                <div class="row justify-content-center py-3">
+                    <div class="col-12 footer-container">
+                        <p class="text-center footer-text">Copyright &copy;2020. All right reserved | This template is
                             made by <a href="https://www.macodeid.com/" class="link-footer">MACode ID</a></p>
                     </div>
                 </div>
