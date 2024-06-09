@@ -3,8 +3,9 @@ from django.contrib.staticfiles import finders
 import os
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Project
+from .models import Project, Topic
 from .forms import ProjectForm
+
 
 def home(request):
     json_file_path = '/static/vendor/particlejs/particlesjs-config.json'
@@ -58,18 +59,9 @@ def project_detail(request, pk):
 
 def project_create(request):
     if request.method == "POST":
-        form = ProjectForm(request.POST, request.FILES)
+        form = ProjectForm(request.POST)
         if form.is_valid():
-            project = form.save(commit=False)
-            if request.FILES.get('image_file'):
-                image = request.FILES['image_file']
-                image_path = os.path.join('images', image.name)
-                full_image_path = os.path.join(settings.MEDIA_ROOT, image_path)
-                with open(full_image_path, 'wb+') as destination:
-                    for chunk in image.chunks():
-                        destination.write(chunk)
-                project.image = image_path
-            project.save()
+            form.save()
             return redirect('project_list')
     else:
         form = ProjectForm()
@@ -78,18 +70,9 @@ def project_create(request):
 def project_update(request, pk):
     project = get_object_or_404(Project, pk=pk)
     if request.method == "POST":
-        form = ProjectForm(request.POST, request.FILES, instance=project)
+        form = ProjectForm(request.POST, instance=project)
         if form.is_valid():
-            project = form.save(commit=False)
-            if request.FILES.get('image_file'):
-                image = request.FILES['image_file']
-                image_path = os.path.join('images', image.name)
-                full_image_path = os.path.join(settings.MEDIA_ROOT, image_path)
-                with open(full_image_path, 'wb+') as destination:
-                    for chunk in image.chunks():
-                        destination.write(chunk)
-                project.image = image_path
-            project.save()
+            form.save()
             return redirect('project_list')
     else:
         form = ProjectForm(instance=project)
