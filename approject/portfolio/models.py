@@ -13,7 +13,7 @@ class Project(models.Model):
     description = models.TextField()
     link_repository = models.URLField()
     image = models.CharField(max_length=200, blank=True, null=True)
-    tech = models.CharField(max_length=200)
+    tech = models.CharField(max_length=200, blank=True, null=True)
     other_tech = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):

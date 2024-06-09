@@ -43,11 +43,9 @@ def contact(request):
 def portfolio(request):
     projects = Project.objects.all()
     print('projects:', projects)
+    for p in projects:
+        print('Topic: ', p.topic)
     return render(request, 'portfolio/portfolio.html', {'projects': projects})
-
-
-
-
 
 def project_list(request):
     projects = Project.objects.all()
