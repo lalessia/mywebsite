@@ -44,7 +44,9 @@ def portfolio(request):
     projects = Project.objects.all()
     print('projects:', projects)
     for p in projects:
-        print('Topic: ', p.topic)
+        print('Project:', p.title)  # Stampa il titolo del progetto
+        print('Topic:', p.topic)    # Stampa il topic del progetto
+
     return render(request, 'portfolio/portfolio.html', {'projects': projects})
 
 def project_list(request):
