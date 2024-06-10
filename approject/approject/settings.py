@@ -111,6 +111,20 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+
+
+STATIC_URL = '/static/'
+
+if not DEBUG:
+    STATIC_ROOT = '/home/DataProof/mywebsite/approject/static'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
+
+
+
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
