@@ -103,3 +103,5 @@ css_free_template/
 approject/static/images/favicon_io
 
 .env
+
+apenv/
