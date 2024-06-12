@@ -12,24 +12,27 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 
+# read .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+print('VIRTUAL VARIABLE', environ.Env.read_env(os.path.join(BASE_DIR, '.env')))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-+^yr-13i=_f2!s_q8sox&1356zdlm)o@^1oe*d31ezl7%n=_hr"
+SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'dataproof.pythonanywhere.com']
-
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 
 # Application definition
@@ -114,16 +117,7 @@ USE_TZ = True
 
 
 
-STATIC_URL = '/static/'
-
-if not DEBUG:
-    STATIC_ROOT = '/home/DataProof/mywebsite/approject/static'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
-]
-
-
+STATIC_ROOT = '/var/www/DataProof/static'
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
