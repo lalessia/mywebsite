@@ -117,7 +117,7 @@ USE_TZ = True
 
 
 
-STATIC_ROOT = '/var/www/DataProof/static'
+STATIC_ROOT = '/var/www/alessiaprofeta/static'
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
