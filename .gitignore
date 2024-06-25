@@ -26,13 +26,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -96,7 +89,6 @@ __pycache__/
 local_settings.py
 
 .env
-db.sqlite3
 
 *.zip
 css_free_template/
