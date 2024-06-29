@@ -88,8 +88,6 @@ target/
 __pycache__/
 local_settings.py
 
-.env
-
 *.zip
 css_free_template/
 approject/static/images/favicon_io
