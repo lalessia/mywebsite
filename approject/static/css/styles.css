@@ -51,6 +51,15 @@ div.badge.caption-header__badge {
   position: relative;
 }
 
+#about {
+  overflow: inherit;
+}
+
+.page-about .img-place {
+  position: sticky;
+  top: 20px;
+}
+
 .page-about .img-place::before {
   border-color: #353b57;
 }
